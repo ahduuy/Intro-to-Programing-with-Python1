@@ -161,37 +161,41 @@ for judul, url_gambar in konten.items():
 st.title("OPERATOR")
 st.image('https://i.imgur.com/ID14ALK.png')
 
-# Daftar teks
-daftar_teks = [
-    "addition merujuk pada proses penjumlahan atau penggabungan dua atau lebih objek atau nilai. Proses ini dapat dilakukan menggunakan operator (+). Tergantung pada tipe data yang digunakan, addition bisa memiliki makna yang berbeda.",
-    "substraction (atau pengurangan) merujuk pada proses mengurangi satu nilai dari nilai lainnya. Ini dilakukan menggunakan operator (-). Seperti halnya dengan addition, substraction memiliki makna yang berbeda tergantung pada tipe data yang digunakan.",
-    "Multiplication (perkalian) adalah operasi matematika dasar yang menghitung hasil dari menambahkan suatu angka ke dirinya sendiri sebanyak jumlah tertentu.",
-    "Division (pembagian) adalah operasi matematika yang membagi suatu angka (dividend) dengan angka lainnya (divisor) untuk mendapatkan hasil (quotient)",
-    "Modulus (sering disebut mod atau sisa pembagian) adalah operasi matematika yang memberikan sisa dari pembagian dua angka.",
-    "Exponentiation (eksponensiasi) adalah operasi matematika di mana sebuah bilangan (basis) dikalikan dengan dirinya sendiri sebanyak jumlah yang ditentukan oleh eksponen.",
-    "Floor division adalah operasi pembagian yang membulatkan hasilnya ke bawah (ke bilangan bulat terdekat).",
-]
+import streamlit as st
 
-# Slider untuk memilih teks
-index = st.slider("Pilih Penjelasan Arithmatic :", 0, len(daftar_teks) - 1)
+# Daftar teks untuk operator aritmatika
+daftar_aritmatika = {
+    "Addition (+)": "Addition merujuk pada proses penjumlahan atau penggabungan dua atau lebih objek atau nilai.",
+    "Subtraction (-)": "Subtraction (pengurangan) adalah proses mengurangi satu nilai dari nilai lainnya.",
+    "Multiplication (*)": "Multiplication (perkalian) adalah operasi menghitung hasil dari menambahkan angka ke dirinya sendiri berulang kali.",
+    "Division (/)": "Division (pembagian) membagi suatu angka dengan angka lainnya untuk mendapatkan hasil (quotient).",
+    "Modulus (%)": "Modulus (mod) memberikan sisa dari pembagian dua angka.",
+    "Exponentiation (**)": "Exponentiation adalah operasi matematika di mana sebuah bilangan dikalikan dengan dirinya sendiri beberapa kali.",
+    "Floor Division (//)": "Floor division adalah pembagian yang membulatkan hasilnya ke bawah ke bilangan bulat terdekat."
+}
 
-# Menampilkan teks berdasarkan index slider
-st.text(daftar_teks[index])
+# Pilihan operator aritmatika
+pilihan_aritmatika = st.selectbox("Pilih Operator Aritmatika:", list(daftar_aritmatika.keys()))
 
-daftar_teks = [
-    "Equal berarti sama dengan, biasanya digunakan dalam matematika dan pemrograman untuk membandingkan dua nilai.",
-    "Not Equal berarti tidak sama dengan, digunakan untuk membandingkan dua nilai dan menentukan apakah mereka berbeda.",
-    "Greater than berarti lebih besar dari suatu nilai lain.",
-    "Less than berarti lebih kecil dari suatu nilai lain.",
-    "Greater than or equal to berarti lebih besar dari atau sama dengan suatu nilai lain.",
-    "Less than or equal to berarti lebih kecil dari atau sama dengan suatu nilai lain."
-]
+# Menampilkan penjelasan berdasarkan pilihan
+st.write(daftar_aritmatika[pilihan_aritmatika])
 
-# Slider untuk memilih teks
-index = st.slider("Pilih Penjelasan Comparasion :", 0, len(daftar_teks) - 1)
+# Daftar teks untuk operator perbandingan
+daftar_perbandingan = {
+    "Equal (==)": "Equal berarti sama dengan, biasanya digunakan dalam matematika dan pemrograman untuk membandingkan dua nilai.",
+    "Not Equal (!=)": "Not Equal berarti tidak sama dengan, digunakan untuk membandingkan dua nilai dan menentukan apakah mereka berbeda.",
+    "Greater Than (>)": "Greater than berarti lebih besar dari suatu nilai lain.",
+    "Less Than (<)": "Less than berarti lebih kecil dari suatu nilai lain.",
+    "Greater Than or Equal (>=)": "Greater than or equal to berarti lebih besar dari atau sama dengan suatu nilai lain.",
+    "Less Than or Equal (<=)": "Less than or equal to berarti lebih kecil dari atau sama dengan suatu nilai lain."
+}
 
-# Menampilkan teks berdasarkan index slider
-st.text(daftar_teks[index])
+# Pilihan operator perbandingan
+pilihan_perbandingan = st.selectbox("Pilih Operator Perbandingan:", list(daftar_perbandingan.keys()))
+
+# Menampilkan penjelasan berdasarkan pilihan
+st.write(daftar_perbandingan[pilihan_perbandingan])
+
 
 # Judul aplikasi
 st.title("Referensi video untuk pembelajaran yang lebih mendalam")
