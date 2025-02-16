@@ -155,7 +155,7 @@ konten = {
 # Menampilkan daftar konten dengan interaksi
 for judul, url_gambar in konten.items():
     if st.button(judul):
-        st.image(url_gambar, caption=judul, use_column_width=True)  # Menampilkan gambar
+        st.image(url_gambar, caption=judul, use_container_width=True)  # Menampilkan gambar
 
 # Judul aplikasi
 st.title("OPERATOR")
